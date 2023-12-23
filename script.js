@@ -2,9 +2,7 @@
 const choices = ["rock", "paper", "scissors"]
 
 function game() {
-    //play the game
-    //play five rounds
-    //console based
+    playRound();                                       
 }
 
 function playRound() {
@@ -12,11 +10,18 @@ function playRound() {
     const computerSelection = computerChoice();
 }
 
-function playerChoice () {                //get input from player
-
+function playerChoice() {               
+   let input = prompt('Type Rock, Paper or Scissors');
+   input = input.toLowerCase();
+   console.log(input)
 }
 
-function computerChoice () {
-     return choices[Math.floor(Math.random()*choices.length)]                                   //get random input for the computer
+
+function computerChoice() {
+     return choices[Math.floor(Math.random() * choices.length)]                               
 }
+
+
+
+game();
 
