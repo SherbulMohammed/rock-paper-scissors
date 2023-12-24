@@ -2,12 +2,17 @@
 const choices = ["rock", "paper", "scissors"]
 
 function game() {
-    playRound();                                       
+    for(let i = 0; i <= 5; i++) {
+        playRound();
+    }                                       
 }
 
 function playRound() {
     const playerSelection = playerChoice();
     const computerSelection = computerChoice();
+    console.log(computerSelection);
+    const winner = checkWinner(playerSelection,computerSelection);
+    console.log(winner);
 }
 
 function playerChoice() {               
@@ -24,6 +29,7 @@ function playerChoice() {
     input = input.toLowerCase()
     check = validateInput(input);
 }
+return input;
 }
 
 
@@ -38,9 +44,15 @@ function validateInput(choice) {
 
 function checkWinner(choiceP, choiceC) {
     if(choiceP === choiceC) {
-        return 'Its a Tie';
-    } else if(choiceP === 'rock' && choiceC =='scissors') {
-        return 'You win';
+        return "Ooo, Its a Tie";
+    } else if(
+    (choiceP === "rock" && choiceC =='scissors') || 
+    (choiceP === "paper" && choiceC =="rock") || 
+    (choiceP === "scissors" && choiceC =="paper") 
+    ) {
+        return "You win";
+    } else{
+        return "Computer wins";
     }
 }
 
