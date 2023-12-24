@@ -36,7 +36,13 @@ function validateInput(choice) {
 
 }
 
-function checkWinner
+function checkWinner(choiceP, choiceC) {
+    if(choiceP === choiceC) {
+        return 'Its a Tie';
+    } else if(choiceP === 'rock' && choiceC =='scissors') {
+        return 'You win';
+    }
+}
 
 
 
