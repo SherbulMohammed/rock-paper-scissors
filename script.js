@@ -14,7 +14,7 @@ function playRound(round) {
     const computerSelection = computerChoice();
     const winner = checkWinner(playerSelection,computerSelection);
     winners.push(winner);
-    logRound(playerSelection, computerSelection, winner)
+    displayRound(playerSelection, computerSelection, winner, round);
 }
 
 function playerChoice() {               
@@ -74,6 +74,7 @@ function displayRound(playerChoice, computerChoice, winner, round) {
     console.log('You chose:' ,playerChoice);
     console.log('Computer chose:' ,computerChoice);
     console.log(winner, 'won the round');
+    console.log("----------------------------------")
 }
 
 
